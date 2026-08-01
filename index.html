@@ -1,1 +1,794 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
 
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="TOKIWA HOUSEは、録音・音源編集・マスタリング・バンド活動を支援するiPhone向け音楽アプリを開発しています。"
+    >
+
+    <title>TOKIWA HOUSE | iPhone音楽アプリ</title>
+
+    <style>
+        :root {
+            --background: #f5f5f7;
+            --surface: rgba(255, 255, 255, 0.92);
+            --surface-solid: #ffffff;
+            --text: #1d1d1f;
+            --subtext: #6e6e73;
+            --accent: #0071e3;
+            --accent-dark: #0057b8;
+            --border: rgba(0, 0, 0, 0.08);
+            --shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+            --radius-large: 28px;
+            --radius-medium: 20px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            color: var(--text);
+            background:
+                radial-gradient(
+                    circle at top left,
+                    rgba(0, 113, 227, 0.12),
+                    transparent 32%
+                ),
+                radial-gradient(
+                    circle at top right,
+                    rgba(130, 87, 229, 0.10),
+                    transparent 30%
+                ),
+                var(--background);
+
+            font-family:
+                -apple-system,
+                BlinkMacSystemFont,
+                "Helvetica Neue",
+                "Hiragino Kaku Gothic ProN",
+                "Yu Gothic",
+                Arial,
+                sans-serif;
+
+            line-height: 1.7;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            width: min(1120px, calc(100% - 40px));
+            margin: 0 auto;
+        }
+
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--border);
+            background: rgba(245, 245, 247, 0.82);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+        }
+
+        .header-inner {
+            min-height: 68px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            font-weight: 800;
+            letter-spacing: 0.04em;
+        }
+
+        .brand-mark {
+            width: 38px;
+            height: 38px;
+            display: grid;
+            place-items: center;
+            border-radius: 12px;
+            color: white;
+            background: linear-gradient(135deg, #111827, #3b82f6);
+            box-shadow: 0 8px 22px rgba(0, 113, 227, 0.24);
+        }
+
+        .navigation {
+            display: flex;
+            align-items: center;
+            gap: 22px;
+        }
+
+        .navigation a {
+            color: var(--subtext);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .navigation a:hover {
+            color: var(--accent);
+        }
+
+        .hero {
+            padding: 112px 0 88px;
+            text-align: center;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 20px;
+            padding: 8px 14px;
+            color: var(--accent-dark);
+            background: rgba(0, 113, 227, 0.10);
+            border: 1px solid rgba(0, 113, 227, 0.12);
+            border-radius: 999px;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .hero h1 {
+            max-width: 900px;
+            margin: 0 auto;
+            font-size: clamp(44px, 8vw, 88px);
+            line-height: 1.05;
+            letter-spacing: -0.055em;
+        }
+
+        .gradient-text {
+            color: transparent;
+            background:
+                linear-gradient(
+                    135deg,
+                    #111827 12%,
+                    #0071e3 55%,
+                    #8257e5 100%
+                );
+            background-clip: text;
+            -webkit-background-clip: text;
+        }
+
+        .hero-copy {
+            max-width: 720px;
+            margin: 28px auto 0;
+            color: var(--subtext);
+            font-size: clamp(17px, 2.6vw, 22px);
+        }
+
+        .hero-actions {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-top: 36px;
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 48px;
+            padding: 0 22px;
+            border-radius: 999px;
+            text-decoration: none;
+            font-weight: 700;
+            transition:
+                transform 0.2s ease,
+                box-shadow 0.2s ease,
+                background 0.2s ease;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+        }
+
+        .button-primary {
+            color: white;
+            background: var(--accent);
+            box-shadow: 0 12px 28px rgba(0, 113, 227, 0.24);
+        }
+
+        .button-primary:hover {
+            background: var(--accent-dark);
+        }
+
+        .button-secondary {
+            background: rgba(255, 255, 255, 0.76);
+            border: 1px solid var(--border);
+        }
+
+        .section {
+            padding: 44px 0 84px;
+        }
+
+        .section-heading {
+            margin-bottom: 34px;
+            text-align: center;
+        }
+
+        .section-heading p {
+            margin: 0 0 8px;
+            color: var(--accent);
+            font-size: 14px;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .section-heading h2 {
+            margin: 0;
+            font-size: clamp(32px, 5vw, 52px);
+            line-height: 1.15;
+            letter-spacing: -0.035em;
+        }
+
+        .section-description {
+            max-width: 680px;
+            margin: 18px auto 0;
+            color: var(--subtext);
+            font-size: 17px;
+        }
+
+        .apps-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 22px;
+        }
+
+        .app-card {
+            position: relative;
+            overflow: hidden;
+            min-height: 310px;
+            padding: 30px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-large);
+            background: var(--surface);
+            box-shadow: var(--shadow);
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+
+        .app-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 22px 48px rgba(0, 0, 0, 0.12);
+        }
+
+        .app-card::after {
+            content: "";
+            position: absolute;
+            right: -70px;
+            bottom: -80px;
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            background: var(--card-glow);
+            filter: blur(2px);
+            opacity: 0.38;
+        }
+
+        .app-icon {
+            position: relative;
+            z-index: 1;
+            width: 66px;
+            height: 66px;
+            display: grid;
+            place-items: center;
+            margin-bottom: 24px;
+            border-radius: 20px;
+            color: white;
+            background: var(--card-gradient);
+            font-size: 30px;
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.16);
+        }
+
+        .app-card h3 {
+            position: relative;
+            z-index: 1;
+            margin: 0;
+            font-size: 28px;
+            line-height: 1.2;
+            letter-spacing: -0.025em;
+        }
+
+        .app-category {
+            position: relative;
+            z-index: 1;
+            margin: 7px 0 16px;
+            color: var(--accent);
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .app-card p {
+            position: relative;
+            z-index: 1;
+            max-width: 440px;
+            margin: 0;
+            color: var(--subtext);
+        }
+
+        .app-link {
+            position: relative;
+            z-index: 1;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 24px;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .app-link:hover {
+            text-decoration: underline;
+        }
+
+        .card-blue {
+            --card-gradient: linear-gradient(135deg, #111827, #2563eb);
+            --card-glow: rgba(37, 99, 235, 0.40);
+        }
+
+        .card-orange {
+            --card-gradient: linear-gradient(135deg, #f97316, #ef4444);
+            --card-glow: rgba(249, 115, 22, 0.38);
+        }
+
+        .card-purple {
+            --card-gradient: linear-gradient(135deg, #7c3aed, #ec4899);
+            --card-glow: rgba(124, 58, 237, 0.34);
+        }
+
+        .card-green {
+            --card-gradient: linear-gradient(135deg, #059669, #14b8a6);
+            --card-glow: rgba(5, 150, 105, 0.34);
+        }
+
+        .about-panel {
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 22px;
+            align-items: stretch;
+        }
+
+        .about-card,
+        .values-card,
+        .contact-card {
+            padding: 34px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-large);
+            background: var(--surface);
+            box-shadow: var(--shadow);
+        }
+
+        .about-card h2,
+        .contact-card h2 {
+            margin-top: 0;
+            font-size: clamp(30px, 4vw, 44px);
+            letter-spacing: -0.035em;
+        }
+
+        .about-card p,
+        .contact-card p {
+            color: var(--subtext);
+            font-size: 17px;
+        }
+
+        .values-card {
+            display: grid;
+            gap: 18px;
+        }
+
+        .value-item {
+            padding-bottom: 18px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .value-item:last-child {
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .value-item strong {
+            display: block;
+            margin-bottom: 4px;
+            font-size: 18px;
+        }
+
+        .value-item span {
+            color: var(--subtext);
+        }
+
+        .contact-card {
+            text-align: center;
+        }
+
+        .contact-actions {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 26px;
+        }
+
+        .site-footer {
+            padding: 30px 0 44px;
+        }
+
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            padding-top: 26px;
+            border-top: 1px solid var(--border);
+            color: var(--subtext);
+            font-size: 14px;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+        }
+
+        .footer-links a {
+            color: var(--subtext);
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        @media (max-width: 800px) {
+            .navigation {
+                display: none;
+            }
+
+            .hero {
+                padding: 88px 0 70px;
+            }
+
+            .apps-grid,
+            .about-panel {
+                grid-template-columns: 1fr;
+            }
+
+            .app-card {
+                min-height: auto;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        @media (max-width: 520px) {
+            .container {
+                width: min(100% - 28px, 1120px);
+            }
+
+            .hero h1 {
+                font-size: 48px;
+            }
+
+            .app-card,
+            .about-card,
+            .values-card,
+            .contact-card {
+                padding: 24px;
+                border-radius: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header class="site-header">
+    <div class="container header-inner">
+
+        <a class="brand" href="#top">
+            <span class="brand-mark">T</span>
+            <span>TOKIWA HOUSE</span>
+        </a>
+
+        <nav class="navigation" aria-label="メインメニュー">
+            <a href="#apps">Apps</a>
+            <a href="#about">About</a>
+            <a href="#support">Support</a>
+            <a href="privacy.html">Privacy</a>
+        </nav>
+
+    </div>
+</header>
+
+<main id="top">
+
+    <section class="hero">
+        <div class="container">
+
+            <div class="eyebrow">
+                ♪ iPhone Music Apps
+            </div>
+
+            <h1>
+                音楽制作を、
+                <span class="gradient-text">もっと自由に。</span>
+            </h1>
+
+            <p class="hero-copy">
+                TOKIWA HOUSEは、録音・音源編集・マスタリング・
+                バンド活動を支援するiPhone向けアプリを開発しています。
+                音楽経験を問わず、直感的に使える道具を目指しています。
+            </p>
+
+            <div class="hero-actions">
+                <a class="button button-primary" href="#apps">
+                    アプリを見る
+                </a>
+
+                <a class="button button-secondary" href="#support">
+                    お問い合わせ
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="section" id="apps">
+        <div class="container">
+
+            <div class="section-heading">
+                <p>Our Apps</p>
+                <h2>音楽を支えるアプリ</h2>
+
+                <div class="section-description">
+                    録音から編集、マスタリング、ファイル管理まで。
+                    iPhoneを音楽制作の頼れる道具に変えるアプリを提供しています。
+                </div>
+            </div>
+
+            <div class="apps-grid">
+
+                <article class="app-card card-blue">
+                    <div class="app-icon">🎙</div>
+
+                    <h3>4trMTR</h3>
+
+                    <div class="app-category">
+                        マルチトラック録音
+                    </div>
+
+                    <p>
+                        iPhoneで手軽に多重録音を楽しめる、
+                        シンプルな4トラックMTRアプリです。
+                        楽器や歌のアイデアを、思いついた瞬間に記録できます。
+                    </p>
+
+                    <!--
+                    App StoreのURLが分かったら、
+                    href="#" を実際のURLへ変更してください。
+                    -->
+
+                    <a class="app-link" href="https://apps.apple.com/jp/app/4trmtr/id6776449627">
+                        App Storeで見る →
+                    </a>
+                </article>
+
+                <article class="app-card card-orange">
+                    <div class="app-icon">🎚</div>
+
+                    <h3>LUFS SLIDER</h3>
+
+                    <div class="app-category">
+                        音量調整・マスタリング
+                    </div>
+
+                    <p>
+                        音源のLUFSを確認しながら、
+                        配信や公開に適した音量へ調整できるアプリです。
+                        難しいマスタリング作業を分かりやすく支援します。
+                    </p>
+
+                    <a class="app-link" href="https://apps.apple.com/jp/app/lufs-slider/id6776055554">
+                        App Storeで見る →
+                    </a>
+                </article>
+
+                <article class="app-card card-purple">
+                    <div class="app-icon">✂️</div>
+
+                    <h3>TRACK EDITOR</h3>
+
+                    <div class="app-category">
+                        オーディオ編集
+                    </div>
+
+                    <p>
+                        波形を見ながら音声ファイルを編集できる、
+                        iPhone向けオーディオエディターです。
+                        カットや音量調整などを直感的に行えます。
+                    </p>
+
+                    <a class="app-link" href="https://apps.apple.com/jp/app/track-editor/id6779508548">
+                        App Storeで見る →
+                    </a>
+                </article>
+
+                <article class="app-card card-green">
+                    <div class="app-icon">📁</div>
+
+                    <h3>BAND STORAGE</h3>
+
+                    <div class="app-category">
+                        音源・プレイリスト管理
+                    </div>
+
+                    <p>
+                        バンド活動で使う音源やプレイリストを
+                        分かりやすく管理するためのアプリです。
+                        練習やライブ準備をスムーズにします。
+                    </p>
+
+                    <a class="app-link" href="https://apps.apple.com/jp/app/band-storage/id6794230079">
+                        App Storeで見る →
+                    </a>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="about">
+        <div class="container">
+
+            <div class="about-panel">
+
+                <article class="about-card">
+                    <p class="eyebrow">About TOKIWA HOUSE</p>
+
+                    <h2>
+                        音楽を楽しむ人のための、
+                        小さくて頼れる道具。
+                    </h2>
+
+                    <p>
+                        TOKIWA HOUSEでは、日々の演奏や録音で感じた
+                        「こんな機能があったら便利」というアイデアを、
+                        iPhoneアプリとして形にしています。
+                    </p>
+
+                    <p>
+                        初めて使う方にも分かりやすく、
+                        経験者には細かな調整もできる。
+                        そんな、長く使える音楽アプリを目指しています。
+                    </p>
+                </article>
+
+                <aside class="values-card">
+
+                    <div class="value-item">
+                        <strong>直感的に使える</strong>
+                        <span>
+                            説明書を読まなくても操作できる、
+                            分かりやすい設計を大切にします。
+                        </span>
+                    </div>
+
+                    <div class="value-item">
+                        <strong>音楽制作を身近に</strong>
+                        <span>
+                            専門的な作業を、iPhoneだけで
+                            手軽に行えるようにします。
+                        </span>
+                    </div>
+
+                    <div class="value-item">
+                        <strong>利用者の声から改善</strong>
+                        <span>
+                            実際の演奏・録音環境で感じた課題をもとに、
+                            継続的に改善します。
+                        </span>
+                    </div>
+
+                </aside>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="support">
+        <div class="container">
+
+            <article class="contact-card">
+
+                <p class="eyebrow">Support</p>
+
+                <h2>お問い合わせ</h2>
+
+                <p>
+                    アプリに関するご質問、不具合のご報告、
+                    ご意見・ご要望はこちらからお寄せください。
+                </p>
+
+                <div class="contact-actions">
+
+                    <!--
+                    下のメールアドレスを、
+                    ご自身のサポート用メールアドレスへ変更してください。
+                    -->
+
+                    <a
+                        class="button button-primary"
+                        href="mailto:talkingwords10@gmail.com
+                    "
+                    >
+                        メールで問い合わせる
+                    </a>
+
+                    <a
+                        class="button button-secondary"
+                        href="privacy.html"
+                    >
+                        プライバシーポリシー
+                    </a>
+
+                </div>
+
+            </article>
+
+        </div>
+    </section>
+
+</main>
+
+<footer class="site-footer">
+    <div class="container footer-inner">
+
+        <div>
+            © 2026 TOKIWA HOUSE
+        </div>
+
+        <div class="footer-links">
+            <a href="#apps">Apps</a>
+            <a href="#about">About</a>
+            <a href="#support">Support</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="app-ads.txt">app-ads.txt</a>
+        </div>
+
+    </div>
+</footer>
+
+</body>
+</html>
