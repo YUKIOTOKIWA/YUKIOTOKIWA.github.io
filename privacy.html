@@ -1,1 +1,1253 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
 
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="TOKIWA HOUSEが提供するアプリのプライバシーポリシーです。"
+    >
+
+    <title>プライバシーポリシー | TOKIWA HOUSE</title>
+
+    <style>
+        :root {
+            --background: #f5f5f7;
+            --surface: rgba(255, 255, 255, 0.94);
+            --text: #1d1d1f;
+            --subtext: #6e6e73;
+            --accent: #0071e3;
+            --accent-dark: #0057b8;
+            --border: rgba(0, 0, 0, 0.08);
+            --shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+            --radius: 28px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            color: var(--text);
+            background:
+                radial-gradient(
+                    circle at top left,
+                    rgba(0, 113, 227, 0.12),
+                    transparent 32%
+                ),
+                radial-gradient(
+                    circle at top right,
+                    rgba(130, 87, 229, 0.10),
+                    transparent 30%
+                ),
+                var(--background);
+
+            font-family:
+                -apple-system,
+                BlinkMacSystemFont,
+                "Helvetica Neue",
+                "Hiragino Kaku Gothic ProN",
+                "Yu Gothic",
+                Arial,
+                sans-serif;
+
+            line-height: 1.8;
+        }
+
+        a {
+            color: var(--accent);
+        }
+
+        .container {
+            width: min(920px, calc(100% - 40px));
+            margin: 0 auto;
+        }
+
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--border);
+            background: rgba(245, 245, 247, 0.84);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+        }
+
+        .header-inner {
+            min-height: 68px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 800;
+            letter-spacing: 0.04em;
+        }
+
+        .brand-mark {
+            width: 38px;
+            height: 38px;
+            display: grid;
+            place-items: center;
+            border-radius: 12px;
+            color: white;
+            background: linear-gradient(135deg, #111827, #3b82f6);
+            box-shadow: 0 8px 22px rgba(0, 113, 227, 0.24);
+        }
+
+        .back-link {
+            color: var(--subtext);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .back-link:hover {
+            color: var(--accent);
+        }
+
+        .hero {
+            padding: 88px 0 54px;
+            text-align: center;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            margin-bottom: 18px;
+            padding: 8px 14px;
+            color: var(--accent-dark);
+            background: rgba(0, 113, 227, 0.10);
+            border: 1px solid rgba(0, 113, 227, 0.12);
+            border-radius: 999px;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .hero h1 {
+            margin: 0;
+            font-size: clamp(38px, 7vw, 64px);
+            line-height: 1.12;
+            letter-spacing: -0.045em;
+        }
+
+        .hero p {
+            max-width: 650px;
+            margin: 22px auto 0;
+            color: var(--subtext);
+            font-size: 17px;
+        }
+
+        .policy-card {
+            margin-bottom: 80px;
+            padding: 42px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            background: var(--surface);
+            box-shadow: var(--shadow);
+        }
+
+        .intro {
+            margin-top: 0;
+            font-size: 17px;
+        }
+
+        .policy-section {
+            padding: 30px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .policy-section:first-of-type {
+            padding-top: 18px;
+        }
+
+        .policy-section:last-of-type {
+            border-bottom: none;
+        }
+
+        .policy-section h2 {
+            margin: 0 0 14px;
+            font-size: 24px;
+            line-height: 1.4;
+            letter-spacing: -0.02em;
+        }
+
+        .policy-section p {
+            margin: 10px 0;
+            color: var(--subtext);
+        }
+
+        .policy-section ul {
+            margin: 14px 0;
+            padding-left: 1.4em;
+            color: var(--subtext);
+        }
+
+        .policy-section li {
+            margin-bottom: 8px;
+        }
+
+        .notice {
+            margin-top: 20px;
+            padding: 20px;
+            border: 1px solid rgba(0, 113, 227, 0.15);
+            border-radius: 18px;
+            background: rgba(0, 113, 227, 0.06);
+            color: var(--subtext);
+        }
+
+        .contact-box {
+            margin-top: 18px;
+            padding: 22px;
+            border-radius: 18px;
+            background: #f5f5f7;
+        }
+
+        .contact-box p {
+            margin: 4px 0;
+        }
+
+        .updated {
+            margin-top: 30px;
+            color: var(--subtext);
+            font-size: 14px;
+        }
+
+        .site-footer {
+            padding: 0 0 44px;
+        }
+
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            padding-top: 26px;
+            border-top: 1px solid var(--border);
+            color: var(--subtext);
+            font-size: 14px;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+        }
+
+        .footer-links a {
+            color: var(--subtext);
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        @media (max-width: 640px) {
+            .container {
+                width: min(100% - 28px, 920px);
+            }
+
+            .hero {
+                padding: 70px 0 42px;
+            }
+
+            .policy-card {
+                padding: 26px;
+                border-radius: 22px;
+            }
+
+            .policy-section h2 {
+                font-size: 21px;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header class="site-header">
+    <div class="container header-inner">
+
+        <a class="brand" href="index.html">
+            <span class="brand-mark">T</span>
+            <span>TOKIWA HOUSE</span>
+        </a>
+
+        <a class="back-link" href="index.html">
+            トップページへ
+        </a>
+
+    </div>
+</header>
+
+<main>
+
+    <section class="hero">
+        <div class="container">
+
+            <div class="eyebrow">
+                Privacy Policy
+            </div>
+
+            <h1>プライバシーポリシー</h1>
+
+            <p>
+                TOKIWA HOUSEが提供するアプリにおける、
+                利用者情報の取扱いについて説明します。
+            </p>
+
+        </div>
+    </section>
+
+    <div class="container">
+
+        <article class="policy-card">
+
+            <p class="intro">
+                TOKIWA HOUSE（以下「当方」といいます）は、
+                当方が提供するアプリおよび関連サービスにおける
+                利用者情報の取扱いについて、以下のとおり
+                プライバシーポリシーを定めます。
+            </p>
+
+            <section class="policy-section">
+                <h2>1．適用範囲</h2>
+
+                <p>
+                    本ポリシーは、TOKIWA HOUSEが提供するアプリ、
+                    ウェブサイトおよびこれらに関連するサービスに適用されます。
+                </p>
+
+                <p>
+                    各アプリに個別のプライバシーポリシーまたは説明が
+                    設けられている場合は、その内容も併せて適用されます。
+                </p>
+            </section>
+
+            <section class="policy-section">
+                <h2>2．取得する情報</h2>
+
+                <p>
+                    当方のアプリでは、提供する機能に応じて、
+                    次の情報を取り扱う場合があります。
+                </p>
+
+                <ul>
+                    <li>端末情報、OSの種類、アプリのバージョン</li>
+                    <li>広告識別子その他の識別情報</li>
+                    <li>アプリの利用状況、操作履歴および広告の表示状況</li>
+                    <li>クラッシュ情報、不具合情報および診断情報</li>
+                    <li>利用者がお問い合わせ時に提供する情報</li>
+                    <li>
+                        利用者がアプリ上で選択、作成または保存する
+                        音声、写真、動画、PDFその他のファイル
+                    </li>
+                </ul>
+
+                <p>
+                    実際に取得または取り扱う情報は、
+                    各アプリの機能および導入しているサービスによって異なります。
+                </p>
+            </section>
+
+            <section class="policy-section">
+                <h2>3．利用目的</h2>
+
+                <p>
+                    取得または取り扱う情報は、次の目的で利用します。
+                </p>
+
+                <ul>
+                    <li>アプリの機能およびサービスを提供するため</li>
+                    <li>アプリの動作改善、品質向上および不具合修正のため</li>
+                    <li>お問い合わせへの対応のため</li>
+                    <li>広告の配信、表示および効果測定のため</li>
+                    <li>不正利用、セキュリティ上の問題を防止するため</li>
+                    <li>法令または規約に基づく対応を行うため</li>
+                </ul>
+            </section>
+
+            <section class="policy-section">
+                <h2>4．広告配信について</h2>
+
+                <p>
+                    当方の一部のアプリでは、広告配信サービスとして
+                    Google AdMobを利用する場合があります。
+                </p>
+
+                <p>
+                    Google AdMobは、広告の配信、広告効果の測定、
+                    不正利用の防止およびサービス改善のために、
+                    広告識別子、端末情報、IPアドレス、利用状況その他の情報を
+                    取得または利用する場合があります。
+                </p>
+
+                <p>
+                    Googleによる情報の取扱いについては、
+                    以下をご確認ください。
+                </p>
+
+                <p>
+                    <a
+                        href="https://policies.google.com/privacy?hl=ja"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Google プライバシーポリシー
+                    </a>
+                </p>
+
+                <div class="notice">
+                    利用者の地域や端末設定などに応じて、
+                    広告に関する同意確認画面またはプライバシー設定画面が
+                    表示される場合があります。
+                </div>
+            </section>
+
+            <section class="policy-section">
+                <h2>5．音声・写真・動画・ファイルについて</h2>
+
+                <p>
+                    当方のアプリは、録音、再生、編集、表示、保存、
+                    書き出しまたは共有などの機能を提供するため、
+                    利用者が選択した音声、写真、動画、PDFその他のファイルを
+                    端末内で取り扱う場合があります。
+                </p>
+
+                <p>
+                    これらのファイルは、原則として利用者の端末内で処理されます。
+                    利用者が共有、アップロードまたは外部サービスへの送信を
+                    明示的に実行しない限り、当方がこれらの内容を
+                    任意に閲覧または外部へ送信することはありません。
+                </p>
+
+                <p>
+                    ただし、クラウド保存、AI処理、ファイル共有その他の
+                    オンライン機能を提供するアプリでは、
+                    機能の実行に必要な範囲でデータが外部サーバーへ
+                    送信される場合があります。
+                </p>
+            </section>
+
+            <section class="policy-section">
+                <h2>6．端末の権限について</h2>
+
+                <p>
+                    アプリの機能に応じて、次の権限を求める場合があります。
+                </p>
+
+                <ul>
+                    <li>マイクへのアクセス</li>
+                    <li>写真ライブラリへのアクセス</li>
+                    <li>カメラへのアクセス</li>
+                    <li>端末内ファイルへのアクセス</li>
+                    <li>メディアライブラリへのアクセス</li>
+                    <li>通知の送信</li>
+                </ul>
+
+                <p>
+                    これらの権限は、対応する機能を提供する目的でのみ使用します。
+                    権限は端末の設定から変更できますが、
+                    無効にすると一部機能が利用できない場合があります。
+                </p>
+            </section>
+
+            <section class="policy-section">
+                <h2>7．第三者への提供</h2>
+
+                <p>
+                    当方は、次の場合を除き、利用者の個人情報を
+                    第三者へ提供しません。
+                </p>
+
+                <ul>
+                    <li>利用者の同意がある場合</li>
+                    <li>法令に基づき開示が必要な場合</li>
+                    <li>
+                        人の生命、身体または財産の保護のために必要であり、
+                        本人の同意を得ることが困難な場合
+                    </li>
+                    <li>
+                        アプリの提供に必要な範囲で、
+                        業務委託先または外部サービスへ情報を送信する場合
+                    </li>
+                </ul>
+            </section>
+
+            <section class="policy-section">
+                <h2>8．外部サービスについて</h2>
+
+                <p>
+                    当方のアプリでは、広告配信、利用状況の分析、
+                    クラッシュ解析、クラウド保存、認証その他の目的で、
+                    第三者が提供するサービスを利用する場合があります。
+                </p>
+
+                <p>
+                    各サービスによる情報の取扱いについては、
+                    各提供者のプライバシーポリシーおよび利用規約が適用されます。
+                </p>
+            </section>
+
+            <section class="policy-section">
+                <h2>9．情報の管理</h2>
+
+                <p>
+                    当方は、取り扱う情報について、
+                    不正アクセス、漏えい、紛失、改ざんその他の事故を
+                    防止するため、合理的な安全管理措置を講じます。
+                </p>
+
+                <p>
+                    ただし、インターネットまたは電子的な保存方法について、
+                    完全な安全性を保証するものではありません。
+                </p>
+            </section>
+
+            <section class="policy-section">
+                <h2>10．子どものプライバシー</h2>
+
+                <p>
+                    当方は、法令上必要となる場合を除き、
+                    保護者の同意なく子どもの個人情報を
+                    意図的に収集することを目的としていません。
+                </p>
+
+                <p>
+                    子どもが利用する可能性のあるアプリについては、
+                    適用される法令、ストア規約および広告ポリシーに従って
+                    適切に対応します。
+                </p>
+            </section>
+
+            <section class="policy-section">
+                <h2>11．利用者による選択</h2>
+
+                <p>
+                    利用者は、端末の設定、アプリ内の設定、
+                    または広告・プライバシー設定画面を通じて、
+                    一部の情報利用について選択または変更できる場合があります。
+                </p>
+
+                <p>
+                    アプリを削除すると、通常は端末内に保存された
+                    アプリ固有のデータも削除されます。
+                    ただし、利用者が書き出したファイル、
+                    外部ストレージまたはクラウド上に保存したデータは除きます。
+                </p>
+            </section>
+
+            <section class="policy-section">
+                <h2>12．プライバシーポリシーの変更</h2>
+
+                <p>
+                    当方は、法令、サービス内容またはアプリの機能変更などに応じて、
+                    本ポリシーを改定する場合があります。
+                </p>
+
+                <p>
+                    重要な変更がある場合は、当ウェブサイト、
+                    アプリ内のお知らせその他適切な方法で周知します。
+                    改定後のポリシーは、本ページに掲載した時点から適用されます。
+                </p>
+            </section>
+
+            <section class="policy-section">
+                <h2>13．お問い合わせ</h2>
+
+                <p>
+                    本ポリシーまたは当方のアプリにおける
+                    情報の取扱いに関するお問い合わせは、
+                    以下の窓口までお願いいたします。
+                </p>
+
+                <div class="contact-box">
+                    <p><strong>運営者：</strong>TOKIWA HOUSE</p>
+
+                    <p>
+                        <strong>メール：</strong>
+                        <a href="mailto:<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="TOKIWA HOUSEが提供するアプリのプライバシーポリシーです。"
+    >
+
+    <title>プライバシーポリシー | TOKIWA HOUSE</title>
+
+    <style>
+        :root {
+            --background: #f5f5f7;
+            --surface: rgba(255, 255, 255, 0.94);
+            --text: #1d1d1f;
+            --subtext: #6e6e73;
+            --accent: #0071e3;
+            --accent-dark: #0057b8;
+            --border: rgba(0, 0, 0, 0.08);
+            --shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+            --radius: 28px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            color: var(--text);
+            background:
+                radial-gradient(
+                    circle at top left,
+                    rgba(0, 113, 227, 0.12),
+                    transparent 32%
+                ),
+                radial-gradient(
+                    circle at top right,
+                    rgba(130, 87, 229, 0.10),
+                    transparent 30%
+                ),
+                var(--background);
+
+            font-family:
+                -apple-system,
+                BlinkMacSystemFont,
+                "Helvetica Neue",
+                "Hiragino Kaku Gothic ProN",
+                "Yu Gothic",
+                Arial,
+                sans-serif;
+
+            line-height: 1.8;
+        }
+
+        a {
+            color: var(--accent);
+        }
+
+        .container {
+            width: min(920px, calc(100% - 40px));
+            margin: 0 auto;
+        }
+
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--border);
+            background: rgba(245, 245, 247, 0.84);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+        }
+
+        .header-inner {
+            min-height: 68px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 800;
+            letter-spacing: 0.04em;
+        }
+
+        .brand-mark {
+            width: 38px;
+            height: 38px;
+            display: grid;
+            place-items: center;
+            border-radius: 12px;
+            color: white;
+            background: linear-gradient(135deg, #111827, #3b82f6);
+            box-shadow: 0 8px 22px rgba(0, 113, 227, 0.24);
+        }
+
+        .back-link {
+            color: var(--subtext);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .back-link:hover {
+            color: var(--accent);
+        }
+
+        .hero {
+            padding: 88px 0 54px;
+            text-align: center;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            margin-bottom: 18px;
+            padding: 8px 14px;
+            color: var(--accent-dark);
+            background: rgba(0, 113, 227, 0.10);
+            border: 1px solid rgba(0, 113, 227, 0.12);
+            border-radius: 999px;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .hero h1 {
+            margin: 0;
+            font-size: clamp(38px, 7vw, 64px);
+            line-height: 1.12;
+            letter-spacing: -0.045em;
+        }
+
+        .hero p {
+            max-width: 650px;
+            margin: 22px auto 0;
+            color: var(--subtext);
+            font-size: 17px;
+        }
+
+        .policy-card {
+            margin-bottom: 80px;
+            padding: 42px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            background: var(--surface);
+            box-shadow: var(--shadow);
+        }
+
+        .intro {
+            margin-top: 0;
+            font-size: 17px;
+        }
+
+        .policy-section {
+            padding: 30px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .policy-section:first-of-type {
+            padding-top: 18px;
+        }
+
+        .policy-section:last-of-type {
+            border-bottom: none;
+        }
+
+        .policy-section h2 {
+            margin: 0 0 14px;
+            font-size: 24px;
+            line-height: 1.4;
+            letter-spacing: -0.02em;
+        }
+
+        .policy-section p {
+            margin: 10px 0;
+            color: var(--subtext);
+        }
+
+        .policy-section ul {
+            margin: 14px 0;
+            padding-left: 1.4em;
+            color: var(--subtext);
+        }
+
+        .policy-section li {
+            margin-bottom: 8px;
+        }
+
+        .notice {
+            margin-top: 20px;
+            padding: 20px;
+            border: 1px solid rgba(0, 113, 227, 0.15);
+            border-radius: 18px;
+            background: rgba(0, 113, 227, 0.06);
+            color: var(--subtext);
+        }
+
+        .contact-box {
+            margin-top: 18px;
+            padding: 22px;
+            border-radius: 18px;
+            background: #f5f5f7;
+        }
+
+        .contact-box p {
+            margin: 4px 0;
+        }
+
+        .updated {
+            margin-top: 30px;
+            color: var(--subtext);
+            font-size: 14px;
+        }
+
+        .site-footer {
+            padding: 0 0 44px;
+        }
+
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            padding-top: 26px;
+            border-top: 1px solid var(--border);
+            color: var(--subtext);
+            font-size: 14px;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+        }
+
+        .footer-links a {
+            color: var(--subtext);
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        @media (max-width: 640px) {
+            .container {
+                width: min(100% - 28px, 920px);
+            }
+
+            .hero {
+                padding: 70px 0 42px;
+            }
+
+            .policy-card {
+                padding: 26px;
+                border-radius: 22px;
+            }
+
+            .policy-section h2 {
+                font-size: 21px;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header class="site-header">
+    <div class="container header-inner">
+
+        <a class="brand" href="index.html">
+            <span class="brand-mark">T</span>
+            <span>TOKIWA HOUSE</span>
+        </a>
+
+        <a class="back-link" href="index.html">
+            トップページへ
+        </a>
+
+    </div>
+</header>
+
+<main>
+
+    <section class="hero">
+        <div class="container">
+
+            <div class="eyebrow">
+                Privacy Policy
+            </div>
+
+            <h1>プライバシーポリシー</h1>
+
+            <p>
+                TOKIWA HOUSEが提供するアプリにおける、
+                利用者情報の取扱いについて説明します。
+            </p>
+
+        </div>
+    </section>
+
+    <div class="container">
+
+        <article class="policy-card">
+
+            <p class="intro">
+                TOKIWA HOUSE（以下「当方」といいます）は、
+                当方が提供するアプリおよび関連サービスにおける
+                利用者情報の取扱いについて、以下のとおり
+                プライバシーポリシーを定めます。
+            </p>
+
+            <section class="policy-section">
+                <h2>1．適用範囲</h2>
+
+                <p>
+                    本ポリシーは、TOKIWA HOUSEが提供するアプリ、
+                    ウェブサイトおよびこれらに関連するサービスに適用されます。
+                </p>
+
+                <p>
+                    各アプリに個別のプライバシーポリシーまたは説明が
+                    設けられている場合は、その内容も併せて適用されます。
+                </p>
+            </section>
+
+            <section class="policy-section">
+                <h2>2．取得する情報</h2>
+
+                <p>
+                    当方のアプリでは、提供する機能に応じて、
+                    次の情報を取り扱う場合があります。
+                </p>
+
+                <ul>
+                    <li>端末情報、OSの種類、アプリのバージョン</li>
+                    <li>広告識別子その他の識別情報</li>
+                    <li>アプリの利用状況、操作履歴および広告の表示状況</li>
+                    <li>クラッシュ情報、不具合情報および診断情報</li>
+                    <li>利用者がお問い合わせ時に提供する情報</li>
+                    <li>
+                        利用者がアプリ上で選択、作成または保存する
+                        音声、写真、動画、PDFその他のファイル
+                    </li>
+                </ul>
+
+                <p>
+                    実際に取得または取り扱う情報は、
+                    各アプリの機能および導入しているサービスによって異なります。
+                </p>
+            </section>
+
+            <section class="policy-section">
+                <h2>3．利用目的</h2>
+
+                <p>
+                    取得または取り扱う情報は、次の目的で利用します。
+                </p>
+
+                <ul>
+                    <li>アプリの機能およびサービスを提供するため</li>
+                    <li>アプリの動作改善、品質向上および不具合修正のため</li>
+                    <li>お問い合わせへの対応のため</li>
+                    <li>広告の配信、表示および効果測定のため</li>
+                    <li>不正利用、セキュリティ上の問題を防止するため</li>
+                    <li>法令または規約に基づく対応を行うため</li>
+                </ul>
+            </section>
+
+            <section class="policy-section">
+                <h2>4．広告配信について</h2>
+
+                <p>
+                    当方の一部のアプリでは、広告配信サービスとして
+                    Google AdMobを利用する場合があります。
+                </p>
+
+                <p>
+                    Google AdMobは、広告の配信、広告効果の測定、
+                    不正利用の防止およびサービス改善のために、
+                    広告識別子、端末情報、IPアドレス、利用状況その他の情報を
+                    取得または利用する場合があります。
+                </p>
+
+                <p>
+                    Googleによる情報の取扱いについては、
+                    以下をご確認ください。
+                </p>
+
+                <p>
+                    <a
+                        href="https://policies.google.com/privacy?hl=ja"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Google プライバシーポリシー
+                    </a>
+                </p>
+
+                <div class="notice">
+                    利用者の地域や端末設定などに応じて、
+                    広告に関する同意確認画面またはプライバシー設定画面が
+                    表示される場合があります。
+                </div>
+            </section>
+
+            <section class="policy-section">
+                <h2>5．音声・写真・動画・ファイルについて</h2>
+
+                <p>
+                    当方のアプリは、録音、再生、編集、表示、保存、
+                    書き出しまたは共有などの機能を提供するため、
+                    利用者が選択した音声、写真、動画、PDFその他のファイルを
+                    端末内で取り扱う場合があります。
+                </p>
+
+                <p>
+                    これらのファイルは、原則として利用者の端末内で処理されます。
+                    利用者が共有、アップロードまたは外部サービスへの送信を
+                    明示的に実行しない限り、当方がこれらの内容を
+                    任意に閲覧または外部へ送信することはありません。
+                </p>
+
+                <p>
+                    ただし、クラウド保存、AI処理、ファイル共有その他の
+                    オンライン機能を提供するアプリでは、
+                    機能の実行に必要な範囲でデータが外部サーバーへ
+                    送信される場合があります。
+                </p>
+            </section>
+
+            <section class="policy-section">
+                <h2>6．端末の権限について</h2>
+
+                <p>
+                    アプリの機能に応じて、次の権限を求める場合があります。
+                </p>
+
+                <ul>
+                    <li>マイクへのアクセス</li>
+                    <li>写真ライブラリへのアクセス</li>
+                    <li>カメラへのアクセス</li>
+                    <li>端末内ファイルへのアクセス</li>
+                    <li>メディアライブラリへのアクセス</li>
+                    <li>通知の送信</li>
+                </ul>
+
+                <p>
+                    これらの権限は、対応する機能を提供する目的でのみ使用します。
+                    権限は端末の設定から変更できますが、
+                    無効にすると一部機能が利用できない場合があります。
+                </p>
+            </section>
+
+            <section class="policy-section">
+                <h2>7．第三者への提供</h2>
+
+                <p>
+                    当方は、次の場合を除き、利用者の個人情報を
+                    第三者へ提供しません。
+                </p>
+
+                <ul>
+                    <li>利用者の同意がある場合</li>
+                    <li>法令に基づき開示が必要な場合</li>
+                    <li>
+                        人の生命、身体または財産の保護のために必要であり、
+                        本人の同意を得ることが困難な場合
+                    </li>
+                    <li>
+                        アプリの提供に必要な範囲で、
+                        業務委託先または外部サービスへ情報を送信する場合
+                    </li>
+                </ul>
+            </section>
+
+            <section class="policy-section">
+                <h2>8．外部サービスについて</h2>
+
+                <p>
+                    当方のアプリでは、広告配信、利用状況の分析、
+                    クラッシュ解析、クラウド保存、認証その他の目的で、
+                    第三者が提供するサービスを利用する場合があります。
+                </p>
+
+                <p>
+                    各サービスによる情報の取扱いについては、
+                    各提供者のプライバシーポリシーおよび利用規約が適用されます。
+                </p>
+            </section>
+
+            <section class="policy-section">
+                <h2>9．情報の管理</h2>
+
+                <p>
+                    当方は、取り扱う情報について、
+                    不正アクセス、漏えい、紛失、改ざんその他の事故を
+                    防止するため、合理的な安全管理措置を講じます。
+                </p>
+
+                <p>
+                    ただし、インターネットまたは電子的な保存方法について、
+                    完全な安全性を保証するものではありません。
+                </p>
+            </section>
+
+            <section class="policy-section">
+                <h2>10．子どものプライバシー</h2>
+
+                <p>
+                    当方は、法令上必要となる場合を除き、
+                    保護者の同意なく子どもの個人情報を
+                    意図的に収集することを目的としていません。
+                </p>
+
+                <p>
+                    子どもが利用する可能性のあるアプリについては、
+                    適用される法令、ストア規約および広告ポリシーに従って
+                    適切に対応します。
+                </p>
+            </section>
+
+            <section class="policy-section">
+                <h2>11．利用者による選択</h2>
+
+                <p>
+                    利用者は、端末の設定、アプリ内の設定、
+                    または広告・プライバシー設定画面を通じて、
+                    一部の情報利用について選択または変更できる場合があります。
+                </p>
+
+                <p>
+                    アプリを削除すると、通常は端末内に保存された
+                    アプリ固有のデータも削除されます。
+                    ただし、利用者が書き出したファイル、
+                    外部ストレージまたはクラウド上に保存したデータは除きます。
+                </p>
+            </section>
+
+            <section class="policy-section">
+                <h2>12．プライバシーポリシーの変更</h2>
+
+                <p>
+                    当方は、法令、サービス内容またはアプリの機能変更などに応じて、
+                    本ポリシーを改定する場合があります。
+                </p>
+
+                <p>
+                    重要な変更がある場合は、当ウェブサイト、
+                    アプリ内のお知らせその他適切な方法で周知します。
+                    改定後のポリシーは、本ページに掲載した時点から適用されます。
+                </p>
+            </section>
+
+            <section class="policy-section">
+                <h2>13．お問い合わせ</h2>
+
+                <p>
+                    本ポリシーまたは当方のアプリにおける
+                    情報の取扱いに関するお問い合わせは、
+                    以下の窓口までお願いいたします。
+                </p>
+
+                <div class="contact-box">
+                    <p><strong>運営者：</strong>TOKIWA HOUSE</p>
+
+                    <p>
+                        <strong>メール：</strong>
+                        <a href="mailto:talkingwords10@gmail.com">
+                            talkingwords10@gmail.com
+                        </a>
+                    </p>
+                </div>
+            </section>
+
+            <p class="updated">
+                制定日：2026年8月1日<br>
+                最終更新日：2026年8月1日
+            </p>
+
+        </article>
+
+    </div>
+
+</main>
+
+<footer class="site-footer">
+    <div class="container footer-inner">
+
+        <div>
+            © 2026 TOKIWA HOUSE
+        </div>
+
+        <div class="footer-links">
+            <a href="index.html">トップページ</a>
+            <a href="index.html#apps">Apps</a>
+            <a href="index.html#support">Support</a>
+            <a href="app-ads.txt">app-ads.txt</a>
+        </div>
+
+    </div>
+</footer>
+
+</body>
+</html>">
+                            talkingwords10@gmail.com
+                        </a>
+                    </p>
+                </div>
+            </section>
+
+            <p class="updated">
+                制定日：2026年8月1日<br>
+                最終更新日：2026年8月1日
+            </p>
+
+        </article>
+
+    </div>
+
+</main>
+
+<footer class="site-footer">
+    <div class="container footer-inner">
+
+        <div>
+            © 2026 TOKIWA HOUSE
+        </div>
+
+        <div class="footer-links">
+            <a href="index.html">トップページ</a>
+            <a href="index.html#apps">Apps</a>
+            <a href="index.html#support">Support</a>
+            <a href="app-ads.txt">app-ads.txt</a>
+        </div>
+
+    </div>
+</footer>
+
+</body>
+</html>
