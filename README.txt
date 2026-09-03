@@ -1,13 +1,22 @@
-TOKIWA HOUSE AdSense再審査用サイト
+TOKIWA HOUSE Zucks 完全版
 
-GitHubの yukiotokiwa.github.io リポジトリへ、このフォルダ内のファイルと
-apps / guides フォルダをそのままアップロードしてください。
+Web広告をGoogle AdSenseからZucksへ完全移行した版です。
 
-重要:
-- 既存の app-ads.txt は同じ内容で同梱しています。
-- AdSense Publisher ID は ca-pub-6506807537765191 を設定済みです。
-- support / privacy / terms にはAdSense広告スクリプトを入れていません。
-- トップ、アプリ紹介、ガイド記事には広告スクリプトを入れています。
-- App Store URLは不明なため、壊れた仮リンクを置かない構成にしています。
+設定済み:
+- Google AdSenseのmetaタグ削除
+- Google AdSenseのJavaScript削除
+- Privacy PolicyのAdSense記述をZucksへ変更
+- トップページのAppsとMusic & Audio Guidesの間にZucks広告枠を追加
+- Zucks広告サイズ: 300×250
+- 掲載位置: インライン_ミドル
+- Frame ID: _5a7d77b4a5
+- Web広告タグ: f=736280
+- 5アプリのApp Storeリンクを維持
+- About / Support / Privacy Policy / Terms / Guidesを維持
+- Google用app-ads.txtは削除
 
-App Storeリンクを5アプリすべてに追加済みです。
+GitHubの YUKIOTOKIWA.github.io リポジトリへ、
+このZIPを解凍した中身をそのままアップロードしてください。
+
+Zucksからapp-ads.txt等の追加指定が案内された場合は、
+その内容を別途反映してください。
